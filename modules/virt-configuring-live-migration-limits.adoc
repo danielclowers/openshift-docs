@@ -29,7 +29,7 @@ metadata:
   namespace: openshift-cnv
 spec:
   liveMigrationConfig: <1>
-    bandwidthPerMigration: 64Mi
+    bandwidthPerMigration: 0
     completionTimeoutPerGiB: 800
     parallelMigrationsPerCluster: 5
     parallelOutboundMigrationsPerNode: 2
