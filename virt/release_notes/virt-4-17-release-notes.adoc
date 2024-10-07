@@ -1,6 +1,6 @@
 :_mod-docs-content-type: ASSEMBLY
 [id="virt-4-17-release-notes"]
-= {VirtProductName} release notes
+= {VirtProductName} release notes PREVIEW
 include::_attributes/common-attributes.adoc[]
 :context: virt-4-17-release-notes
 
@@ -57,8 +57,8 @@ Quick start tours are available for several {VirtProductName} features. To view 
 
 This release adds new features and enhancements related to the following components and concepts:
 
-[id="virt-4-17-installation-update"]
-=== Installation and update
+//[id="virt-4-17-installation-update"]
+//=== Installation and update
 
 [id="virt-4-17-infrastructure"]
 === Infrastructure
@@ -71,8 +71,8 @@ This release adds new features and enhancements related to the following compone
 //CNV-30590 NEW GA Host-side USB passthrough
 * As a cluster administrator, you can xref:../../virt/virtual_machines/advanced_vm_management/virt-configuring-usb-host-passthrough.adoc#virt-configuring-usb-host-passthrough[expose USB devices in a cluster], making them available for virtual machine (VM) owners to assign to VMs. You expose a USB device by first enabling host passthrough and then configuring the VM to access the USB device.
 
-[id="virt-4-17-networking"]
-=== Networking
+//[id="virt-4-17-networking"]
+//=== Networking
 
 [id="virt-4-17-storage"]
 === Storage
@@ -94,11 +94,11 @@ To access the new view, navigate to *Administrator* -> *Virtualization* in the w
 
 * xref:../../virt/virtual_machines/virt-edit-vms.adoc#virt-hot-plugging-memory_virt-edit-vms[Hot plugging memory] for VMs from the web console is now generally available.
 
-[id="virt-4-17-monitoring"]
-=== Monitoring
+//[id="virt-4-17-monitoring"]
+//=== Monitoring
 
-[id="virt-4-17-notable-technical-changes"]
-=== Notable technical changes
+//[id="virt-4-17-notable-technical-changes"]
+//=== Notable technical changes
 
 [id="virt-4-17-deprecated-removed"]
 == Deprecated and removed features
@@ -140,19 +140,19 @@ link:https://access.redhat.com/support/offerings/techpreview[Technology Preview 
 //CNV-22314: Safe memory overcommitment using `wasp-agent`
 * Cluster admins can now use the `wasp-agent` tool to xref:../../virt/post_installation_configuration/virt-configuring-higher-vm-workload-density.adoc#virt-configuring-higher-vm-workload-density[configure a higher VM workload density] in their clusters by overcommitting the amount of memory, in RAM, and assigning swap resources to VM workloads.
 
-[id="virt-4-17-bug-fixes"]
-== Bug fixes
+//[id="virt-4-17-bug-fixes"]
+//== Bug fixes
 
 [id="virt-4-17-known-issues"]
 == Known issues
 
 [discrete]
-[id="virt-4-17-ki-monitoring"]
-==== Monitoring
+//[id="virt-4-17-ki-monitoring"]
+//==== Monitoring
 
 [discrete]
-[id="virt-4-17-ki-networking"]
-==== Networking
+//[id="virt-4-17-ki-networking"]
+//==== Networking
 
 
 [discrete]
