@@ -11,7 +11,11 @@ You can override the default storage class by editing the `HyperConverged` custo
 
 [IMPORTANT]
 ====
-Boot sources are created from storage using the default storage class. If your cluster does not have a default storage class, you must define one before configuring automatic updates for custom boot sources.
+Boot sources are created using the default storage class. When the default storage class changes, old boot sources are automatically updated using the new default storage class.
+
+If boot source images were stored as VolumeSnapshots and both the cluster default and `virt-default` storage class have been unset, the VolumeSnapshots will be cleaned up and new DataVolumes will be created. However they will not start importing until a default storage class is set.
+
+To ensure stable behavior and avoid unnecessary re-importing, you can specify the `storageClassName` in the `dataImportCronTemplates` section of the `HyperConverged` resource.
 ====
 
 .Procedure
@@ -23,7 +27,7 @@ Boot sources are created from storage using the default storage class. If your c
 $ oc edit hyperconverged kubevirt-hyperconverged -n {CNVNamespace}
 ----
 
-. Define a new storage class by entering a value in the `storageClassName` field:
+. Add the `dataImportCronTemplate` to the spec section of the `HyperConverged` resource and set the `storageClassName`:
 +
 [source,yaml]
 ----
@@ -34,11 +38,12 @@ metadata:
 spec:
   dataImportCronTemplates:
   - metadata:
-      name: rhel8-image-cron
+      name: rhel9-image-cron
     spec:
       template:
         spec:
-          storageClassName: <new_storage_class> <1>
+          storage:
+            storageClassName: <storage_class> <1>
       schedule: "0 */12 * * *" <2>
       managedDataSource: <data_source> <3>
 # ...
@@ -87,3 +92,19 @@ $ oc patch storageclass <current_default_storage_class> -p '{"metadata": {"annot
 $ oc patch storageclass <new_storage_class> -p '{"metadata":{"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}' <1>
 ----
 <1> Replace `<new_storage_class>` with the `storageClassName` value that you added to the `HyperConverged` CR.
+
+. Wait for the HyperConverged Operator (HCO) and Storage Solution Provider (SSP) resources to complete reconciliation.
+
+. Delete any outdated DataVolume and VolumeSnapshot objects from the `openshift-virtualization-os-images` namespace.
++
+[source,terminal]
+----
+$ oc delete DataVolume,VolumeSnapshot -n openshift-virtualization-os-images --selector=cdi.kubevirt.io/dataImportCron
+----
+
+. Wait for all DataSources to reach a "Ready - True" status. DataSources can reference either a PersistentVolumeClaim (PVC) or a VolumeSnapshot. To check the expected source format, run the following command:
++
+[source,terminal]
+----
+$ oc get storageprofile <storage_class_name> -o json | jq .status.dataImportCronSourceFormat
+----
