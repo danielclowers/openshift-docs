@@ -30,6 +30,18 @@ The {product-title} web console does not support deleting filesystems. To delete
 [id="virt-fusion-access-san-known-issues_{context}"]
 == Known issues
 
+Issue with Fusion Access for SAN filesystem provisioning::
+Fusion Access for SAN does not pause deletion of core pods while a filesystem and its LocalDisks are being provisioned. If this happens, a filesystem might be only partially created on the LUN, which causes the following persistent error:
++
+[source,terminal]
+----
+Disk <ID> may still belong to an active file system
+----
++
+There is no workaround for this issue. Contact IBM Support for assistance.
++
+link:https://issues.redhat.com/browse/OCPNAS-233[OCPNAS-233]
+
 Filesystem creation might fail during core pod deletion::
 
 Filesystem creation might fail if core pods are deleted at the same time. The filesystem might be partially created on the LUN, which results in the following persistent error:
