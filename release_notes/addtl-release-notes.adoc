@@ -91,7 +91,7 @@ xref:../virt/release_notes/virt-4-22-release-notes.adoc#virt-4-22-release-notes[
 xref:../observability/otel/otel-rn.adoc#otel-rn[{OTELName}]
 
 P::
-xref:../observability/power_monitoring/power-monitoring-release-notes.adoc#power-monitoring-release-notes[{PM-title-c}]
+link:https://docs.redhat.com/en/documentation/power_monitoring_for_red_hat_openshift/latest/html/release_notes/index[{PM-title-c}]
 
 R::
 xref:../nodes/pods/run_once_duration_override/run-once-duration-override-release-notes.adoc#run-once-duration-override-release-notes[{run-once-operator}]
