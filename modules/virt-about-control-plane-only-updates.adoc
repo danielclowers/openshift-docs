@@ -16,20 +16,18 @@ An EUS-to-EUS update starts with updating {VirtProductName} to the latest z-stre
 You can directly update {VirtProductName} to the latest z-stream release of your current minor version without applying each intermediate z-stream update.
 ====
 
-For more information about EUS versions, see the link:https://access.redhat.com/support/policy/updates/openshift[Red Hat OpenShift Container Platform Life Cycle Policy].
+For more information about EUS versions, see the link:https://access.redhat.com/support/policy/updates/openshift[{product-title} Life Cycle Policy].
 
 [id="prerequisites_{context}"]
 == Prerequisites
 
 Before beginning a Control Plane Only update, you must:
 
-* Pause worker nodes' machine config pools before you start a Control Plane Only update so that the workers are not rebooted twice.
+* You have paused worker nodes' machine config pools. This prevents worker nodes from being rebooted twice.
 
-* Disable automatic workload updates before you begin the update process. This is to prevent {VirtProductName} from migrating or evicting your virtual machines (VMs) until you update to your target EUS version.
+* You have disabled automatic workload updates. This prevents {VirtProductName} from migrating or evicting virtual machines (VMs) until you update to the target EUS version.
 
 [NOTE]
 ====
 By default, {VirtProductName} automatically updates workloads, such as the `virt-launcher` pod, when you update the {VirtProductName} Operator. You can configure this behavior in the `spec.workloadUpdateStrategy` stanza of the `HyperConverged` custom resource.
 ====
-
-// link to EUS to EUS docs in assembly due to module limitations
