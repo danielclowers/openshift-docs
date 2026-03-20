@@ -8,12 +8,12 @@
 .Images deprecated and removed tracker
 [cols="4,1,1,1",options="header"]
 |====
-|Feature |4.19 |4.20 |4.21
+|Feature |4.20 |4.21 |4.22
 
 |Cluster Samples Operator
 |Deprecated
 |Deprecated
-|Deprecated
+|
 |====
 
 
@@ -23,57 +23,52 @@
 .Installation deprecated and removed tracker
 [cols="4,1,1,1",options="header"]
 |====
-|Feature |4.19 |4.20 |4.21
+|Feature |4.20 |4.21 |4.22
 
 |`--cloud` parameter for `oc adm release extract`
 |Deprecated
 |Deprecated
-|Deprecated
+|
 
 |CoreDNS wildcard queries for the `cluster.local` domain
 |Deprecated
 |Deprecated
-|Deprecated
+|
 
 |`compute.platform.openstack.rootVolume.type` for {rh-openstack}
 |Deprecated
 |Deprecated
-|Deprecated
+|
 
 |`controlPlane.platform.openstack.rootVolume.type` for {rh-openstack}
 |Deprecated
 |Deprecated
-|Deprecated
+|
 
 |`ingressVIP` and `apiVIP` settings in the `install-config.yaml` file for installer-provisioned infrastructure clusters
 |Deprecated
 |Deprecated
-|Deprecated
-
-|Package-based {op-system-base} compute machines
-|Removed
-|Removed
-|Removed
+|
 
 |`platform.aws.preserveBootstrapIgnition` parameter for {aws-first}
 |Deprecated
 |Deprecated
-|Deprecated
+|
 
 |Installing a cluster on {aws-short} with compute nodes in {aws-short} Outposts
 |Deprecated
 |Deprecated
-|Deprecated
+|
 
 |Deploying managed clusters using `SiteConfig` and the {ztp} workflow
 |Deprecated
-|Deprecated
 |Removed
+|
 
 |Installing a cluster using Fujitsu iRMC drivers on bare-metal machines
 |General Availability
-|General Availability
 |Deprecated
+|
 |====
 
 [id="ocp-release-note-machine-manage-dep-rem_{context}"]
@@ -82,17 +77,17 @@
 .Machine management deprecated and removed tracker
 [cols="4,1,1,1",options="header"]
 |====
-|Feature |4.19 |4.20 |4.21
+|Feature |4.20 |4.21 |4.22
 
 |Confidential Computing with AMD Secure Encrypted Virtualization for {gcp-first}
-|General Availability
 |Deprecated
 |Deprecated
+|
 
 |Managing bare-metal machines using Fujitsu iRMC drivers
 |General Availability
-|General Availability
 |Deprecated
+|
 |====
 
 [id="ocp-release-note-networking-dep-rem_{context}"]
@@ -101,12 +96,12 @@
 .Networking deprecated and removed tracker
 [cols="4,1,1,1",options="header"]
 |====
-|Feature |4.19 |4.20 |4.21
+|Feature |4.20 |4.21 |4.22
 
 |iptables
 |Deprecated
 |Deprecated
-|Deprecated
+|
 |====
 
 
@@ -116,27 +111,22 @@
 .Node deprecated and removed tracker
 [cols="4,1,1,1",options="header"]
 |====
-|Feature |4.19 |4.20 |4.21
+|Feature |4.20 |4.21 |4.22
 
 |`ImageContentSourcePolicy` (ICSP) objects
 |Deprecated
 |Deprecated
-|Deprecated
+|
 
 |Kubernetes topology label `failure-domain.beta.kubernetes.io/zone`
 |Deprecated
 |Deprecated
-|Deprecated
+|
 
 |Kubernetes topology label `failure-domain.beta.kubernetes.io/region`
 |Deprecated
 |Deprecated
-|Deprecated
-
-|cgroup v1
-|Removed
-|Removed
-|Removed
+|
 |====
 
 
@@ -146,18 +136,18 @@
 .OpenShift CLI (oc) deprecated and removed tracker
 [cols="4,1,1,1",options="header"]
 |====
-|Feature |4.19 |4.20 |4.21
+|Feature |4.20 |4.21 |4.22
 
 |oc-mirror plugin v1
 |Deprecated
 |Deprecated
-|Deprecated
+|
 
 
 |Docker v2 registries
-|General Availability
 |Deprecated
 |Deprecated
+|
 |====
 
 
@@ -169,43 +159,13 @@
 .Operator lifecycle and development deprecated and removed tracker
 [cols="4,1,1,1",options="header"]
 |====
-|Feature |4.19 |4.20 |4.21
-
-|Operator SDK
-|Removed
-|Removed
-|Removed
-
-|Scaffolding tools for Ansible-based Operator projects
-|Removed
-|Removed
-|Removed
-
-|Scaffolding tools for Helm-based Operator projects
-|Removed
-|Removed
-|Removed
-
-|Scaffolding tools for Go-based Operator projects
-|Removed
-|Removed
-|Removed
-
-|Scaffolding tools for Hybrid Helm-based Operator projects
-|Removed
-|Removed
-|Removed
-
-|Scaffolding tools for Java-based Operator projects
-|Removed
-|Removed
-|Removed
+|Feature |4.20 |4.21 |4.22
 
 // Do not remove the SQLite database... entry until otherwise directed by the Operator Framework PM
 |SQLite database format for Operator catalogs
 |Deprecated
 |Deprecated
-|Deprecated
+|
 |====
 
 
@@ -219,19 +179,13 @@
 //|====
 
 
-== Storage deprecated and removed features
+//== Storage deprecated and removed features
 
-.Storage deprecated and removed tracker
-[cols="4,1,1,1",options="header"]
-|====
-|Feature |4.19 |4.20 |4.21
-
-|Shared Resources CSI Driver Operator
-|Removed
-|Removed
-|Removed
-|====
-
+//.Storage deprecated and removed tracker
+//[cols="4,1,1,1",options="header"]
+//|====
+//|Feature |4.19 |4.20 |4.21
+//|====
 
 //[id="ocp-clusters-dep-rem_{context}"]
 //== Updating clusters deprecated and removed features
@@ -249,17 +203,12 @@
 .Web console deprecated and removed tracker
 [cols="4,1,1,1",options="header"]
 |====
-|Feature |4.19 |4.20 |4.21
+|Feature |4.20 |4.21 |4.22
 
 |`useModal` hook for dynamic plugin SDK
 |Deprecated
 |Deprecated
-|Deprecated
-
-|Patternfly 4
-|Removed
-|Removed
-|Removed
+|
 |====
 
 
@@ -269,10 +218,10 @@
 .Workloads deprecated and removed tracker
 [cols="4,1,1,1",options="header"]
 |====
-|Feature |4.19 |4.20 |4.21
+|Feature |4.20 |4.21 |4.22
 
 |`DeploymentConfig` objects
 |Deprecated
 |Deprecated
-|Deprecated
+|
 |====
