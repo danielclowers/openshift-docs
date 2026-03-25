@@ -1,0 +1,34 @@
+// Module included in the following assemblies:
+//
+//microshift_release_notes/microshift-4-21-release-notes.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="microshift-4-21-7-async_{context}"]
+= RHBA-2026:5339 - {microshift-short} 4.21.7 bug fix and enhancement update
+
+Issued: 24 March 2026
+
+[role="_abstract"]
+{product-title} release 4.21.7 is now available. Bug fixes and enhancements are listed in the link:https://access.redhat.com/errata/RHBA-2026:5339[RHBA-2026:5339] advisory. Release notes for bug fixes and enhancements are provided in this documentation. The images that are included in the update are provided by the {OCP} link:https://access.redhat.com/errata/RHSA-2026:5174[RHSA-2026:5174] advisory.
+
+See the latest images included with {microshift-short} by using the following instructions:
+
+* xref:../microshift_updating/microshift-list-update-contents.adoc#microshift-get-rpm-release-info_microshift-list-update-contents[Listing the contents of the {microshift-short} RPM release package]
+* xref:../microshift_install_bootc/microshift-install-bootc-image.adoc#microshift-install-bootc-get-published-image_microshift-install-publish-bootc-image[Getting the published bootc image for {microshift-short}]
+
+[id="microshift-4-21-7-enhancement_{context}"]
+== Enhancements
+
+* With this update, the manual installation of Remote Direct Memory Access (RDMA) dependencies for RDMA network interface controllers (NIC) in {microshift-short} is not required. This enhancement automates the process, ensuring a seamless setup and improving user experience. It addresses the issue that is noted in (link:https://issues.redhat.com/browse/OCPBUGS-72418[OCPBUGS-72418]) and is part of the RHBA-2026:5339 advisory. This feature resolves the conflict between `rdma-core` package dependencies and {microshift-short} Single Root I/O Virtualization (SR-IOV) RPM, making it easier to deploy RDMA-dependent applications in {ocp} 4.21. The fix for this issue is available in the advisory RHBA-2026:5339 advisory. (link:https://issues.redhat.com/browse/OCPBUGS-72568[OCPBUGS-72568])
+
+* With this update, {microshift-short} allows single-architecture local images for cert-manager, eliminating the need for mirroring all architectures and reducing storage bloat in offline builds. This results in faster and more efficient builds for users, and improved disk space management on Edge devices, providing a more streamlined and optimized experience for users building and deploying {microshift-short} in air-gapped environments. (link:https://issues.redhat.com/browse/OCPBUGS-74155[OCPBUGS-74155])
+
+[id="microshift-4-21-7-fixed-issues_{context}"]
+== Fixed issues
+
+* Before this update, {microshift-short} failed to start after upgrading due to conflicts with custom feature gates. As a consequence, {microshift-short} cluster upgrades failed when custom feature gates were set, affecting users with support exceptions. With this release, {microshift-short} supports custom feature gate upgrades in major and minor versions. As a result, {microshift-short} cluster upgrades with custom feature gates are supported, ensuring seamless upgrades for customers with support exceptions. (link:https://issues.redhat.com/browse/OCPBUGS-77907[OCPBUGS-77907])
+
+* Before this update, the {microshift-short} configuration failed to set the `SpecialHandlingSupportExceptionRequired` field due to missing implementation. As a consequence, {microshift-short} failed to handle special exceptions, causing potential issues with `FeatureA`. With this release, the special handling exception required field is set in the effective {microshift-short} configuration. As a result, the system's error handling is improved.(link:https://issues.redhat.com/browse/OCPBUGS-78522[OCPBUGS-78522])
+
+* Before this update, the removal of validation checks allowed the application of custom feature gates without an upgrade lock. As a consequence, user upgrades could break the cluster due to unchecked custom feature gates. With this release, the validation for an empty feature set is removed, allowing for unchecked feature gate application. As a result, the unintended application of feature gates during upgrades is prevented, ensuring cluster stability. (link:https://issues.redhat.com/browse/OCPBUGS-78707[OCPBUGS-78707])
+
