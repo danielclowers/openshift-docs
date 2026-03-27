@@ -33,6 +33,12 @@ Using {VirtProductName} on a {gcp-full} cluster with bare-metal nodes is now gen
 ** Multi-writer mode (RWX) is currently not allowed for bare-metal machines. For more information, see link:https://docs.cloud.google.com/compute/docs/disks/sharing-disks-between-vms#mw-limitations[Limitations for sharing Hyperdisk volumes in multi-writer mode] in the {gcp-short} documentation.
 ** While most machine types default to 127 volumes per node, certain bare-metal machine types have lower volume attachment limits. For more information, see link:https://docs.cloud.google.com/compute/docs/general-purpose-machines#disk_and_capacity_limits_8[Disk and capacity limits] in the {gcp-short} documentation and link:https://access.redhat.com/articles/7139682#volume-attachment-limit-per-node-2[Volume Attachment Limit Per Node] in the Red{nbsp}Hat Knowledgebase.
 ====
+
+Cross-cluster live migration for {VirtProductName} is generally available::
+Cross-cluster live migration is generally available for {VirtProductName} 4.21.1. You can now move the workloads of running virtual machines (VMs) from one {product-title} cluster to another {product-title} cluster without disruption.
++
+link:https://redhat.atlassian.net/browse/CNV-50823[CNV-50823]
+
 //+
 //can't seem to find a relevant public Jira link
 
