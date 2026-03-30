@@ -4,7 +4,7 @@
 
 :_mod-docs-content-type: REFERENCE
 [id="zstream-4-21-7_{context}"]
-= RHSA-2026:5174 - {product-title} {product-version}.7 fixed issues
+= RHSA-2026:5174 - {product-title} {product-version}.7 fixed issues advisory
 
 Issued: 24 March 2026
 
