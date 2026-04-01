@@ -65,7 +65,7 @@ endif::openshift-origin[]
 include::modules/gathering-data-specific-features.adoc[leveloffset=+2]
 
 [role="_additional-resources"]
-== Additional resources
+.Additional resources
 
 ifndef::openshift-rosa,openshift-rosa-hcp,openshift-dedicated[]
 * xref:../nodes/cma/nodes-cma-autoscaling-custom.adoc#nodes-cma-autoscaling-custom-gather[Gathering debugging data for the Custom Metrics Autoscaler]
@@ -102,7 +102,7 @@ include::modules/support-log-gather-install-cli.adoc[leveloffset=+2]
 include::modules/support-log-gather-configure-cli.adoc[leveloffset=+2]
 
 [role="_additional-resources"]
-== Additional resources
+.Additional resources
 
 * xref:../authentication/understanding-and-creating-service-accounts.adoc#understanding-and-creating-service-accounts[Understanding and creating service accounts]
 
