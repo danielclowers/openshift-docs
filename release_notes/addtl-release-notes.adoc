@@ -46,6 +46,9 @@ xref:../security/file_integrity_operator/file-integrity-operator-release-notes.a
 H::
 xref:../hosted_control_planes/hcp-release-notes.adoc#hcp-release-notes[{hcp-capital}]
 
+J::
+xref:../ai_workloads/jobset_operator/jobset-release-notes.adoc#js-release-notes[{js-operator}]
+
 K::
 xref:../nodes/scheduling/descheduler/nodes-descheduler-release-notes.adoc#nodes-descheduler-release-notes[{descheduler-operator}]
 +
