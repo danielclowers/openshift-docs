@@ -309,3 +309,5 @@ link:https://issues.redhat.com/browse/CNV-75084[CNV-75084]
 == Maintenance releases
 
 include::modules/virt-zstream-4-21-1.adoc[leveloffset=+2]
+
+include::modules/virt-zstream-4-21-2.adoc[leveloffset=+2]
