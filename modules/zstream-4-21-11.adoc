@@ -1,0 +1,53 @@
+// Module included in the following assemblies:
+//
+// * release_notes/ocp-4-21-release-notes.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="zstream-4-21-11_{context}"]
+= RHBA-2026:8424 - {product-title} {product-version}.11 fixed issues
+
+Issued: 21 April 2026
+
+[role="_abstract"]
+{product-title} release {product-version}.11 is now available. The list of fixed issues that are included in the update is documented in the link:https://access.redhat.com/errata/RHBA-2026:8424[RHBA-2026:8424] advisory. The RPM packages that are included in the update are provided by the link:https://access.redhat.com/errata/RHBA-2026:8419[RHBA-2026:8419] advisory.
+
+Space precluded documenting all of the container images for this release in the advisory.
+
+You can view the container images in this release by running the following command:
+
+[source,terminal]
+----
+$ oc adm release info 4.21.11 --pullspecs
+----
+
+[id="zstream-4-21-11-enhancements_{context}"]
+== Enhancements
+
+* With this release, the Insights Operator now collects the `opentelemetrycollectors.opentelemetry.io` custom resource to improve data retrieval efficiency and system performance. 
++
+To maintain security and prevent the collection of sensitive information, the Insights Operator applies the following constraints:
+
+** Resource Limit: The Insights Operator collects a maximum of five OpenTelemetry Collector custom resources from the cluster.
+
+** Data Masking: The Insights Operator retains only the service subsection of the `spec.config` field. It omits receivers, exporters, and other pipeline configuration details.
++
+These improvements allow {product-title} to better analyze the efficiency of the data gathering process and provide more precise environment insights. (link:https://redhat.atlassian.net/browse/OCPBUGS-79534[OCPBUGS-79534])
+
+
+[id="zstream-4-21-11-fixed-issues_{context}"]
+== Fixed issues
+
+* Before this update, creating an Open Source Service Mesh (OSSM) subscription outside the `openshift-operators` namespace caused a conflict with the `AllNamespace` Operator design. As a result, users encountered duplicate OSSM subscriptions. With this update, the Cluster Ingress Operator no longer creates second OSSM subscriptions in non-default namespaces, improving subscription management. (link:https://redhat.atlassian.net/browse/OCPBUGS-76609[OCPBUGS-76609])
+
+* Before this update, an incorrect subnet configuration in the `metal3-static-ip-set` YAML file when switching from a managed to an unmanaged provisioning network prevented users from creating routes with an unmanaged provisioning network. With this update, the `metal3-static-ip-set` YAML file sets the correct subnet for an unmanaged provisioning network, resolving the issue and enabling successful route creation. (link:https://redhat.atlassian.net/browse/OCPBUGS-78580[OCPBUGS-78580])
+
+* Before this update, `kube-apiserver` rollouts in user clusters with encrypted etcd caused TCP Reset (RST) storms, resulting in application pod traffic drops. With this update, the issue is resolved, and `kube-apiserver` rollouts no longer cause traffic drops in encrypted clusters, improving service stability. (link:https://redhat.atlassian.net/browse/OCPBUGS-81475[OCPBUGS-81475])
+
+* Before this update, missing `itemsPerPage` and `perPageSuffix` properties in internationalization prevented the translation of pagination strings. As a consequence, users experienced untranslated pagination controls. With this update, the pagination component strings are properly internationalized. As a result, pagination strings are translated correctly, improving the localized user experience in the {product-title} Console. (link:https://redhat.atlassian.net/browse/OCPBUGS-81714[OCPBUGS-81714])
+
+* Before this update, Hypershift hosted clusters in AWS ISO regions failed to honor Amazon Machine Image (AMI) overrides in `NodePool` specifications, causing end users to experience failure when deploying node pools due to incorrect AMI usage. With this update, Hypershift now honors AWS AMI overrides in `NodePool` specifications, enabling consistent node pool deployments in ISO regions. (link:https://redhat.atlassian.net/browse/OCPBUGS-81745[OCPBUGS-81745])
+
+[id="zstream-4-21-11-updating_{context}"]
+== Updating
+
+To update an {product-title} 4.21 cluster to this latest release, see xref:../updating/updating_a_cluster/updating-cluster-cli.adoc#updating-cluster-cli[Updating a cluster using the CLI].
