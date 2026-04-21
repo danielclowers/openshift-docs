@@ -1,0 +1,43 @@
+// Module included in the following assemblies:
+//
+// * virt/release_notes/virt-4-21-release-notes.adoc
+
+:_mod-docs-content-type: REFERENCE
+[id="virt-zstream-4-21-2_{context}"]
+= {VirtProductName} 4.21.2 updates
+
+[role="_abstract"]
+{VirtProductName} {product-version}.2 is now available with updates to packages and images that fix several bugs and add enhancements.
+
+[id="virt-4-21-2-new_{context}"]
+== New features and enhancements
+
+// Example release note format:
+//
+// Improved lorem installation workflow for clusters::
+// Lorem ipsum dolor sit amet, consectetur adipiscing elit. As a result, lorem updates complete more predictably on large clusters.
+// +
+// link:https://issues.redhat.com/browse/CNV-00001[CNV-00001]
+
+{VirtProductName} with {gcp-first} NetApp Volumes (GCNV) is generally available::
+{VirtProductName} on {gcp-first} with Google Cloud NetApp Volumes (GCNV) storage is now generally available (GA). GCNV provides NFS-based shared storage that supports ReadWriteMany (RWX) access in Filesystem mode. The NetApp Trident CSI driver provisions GCNV storage volumes.
++
+For more information, see the following articles in the Red{nbsp}Hat Knowledgebase:
+
+* link:https://access.redhat.com/articles/7141472[Storage configuration for {VirtProductName} with GCNV]
+* link:https://access.redhat.com/articles/7141471[{VirtProductName} with GCNV: Known errors and limitations]
++
+[IMPORTANT]
+====
+* Running {VirtProductName} with GCNV storage requires {product-title} 4.21 and {VirtProductName} 4.21.2, or later versions.
+* Only the *Flex File* service level is supported in this release. When creating storage pools, select the *File* storage type. *Flex Unified* is not supported.
+* Flex File volumes are NFS-only and support `volumeMode: Filesystem` exclusively. `volumeMode: Block` is not available with Flex File.
+* GCNV Flex pools are limited to 50 volumes per pool. To support larger deployments, create multiple storage pools and list them all in the `TridentBackendConfig` file. For more information, see link:https://docs.cloud.google.com/netapp/volumes/docs/quotas#storage_pool_limits[GCNV storage pool limits].
+* Flex File pools can be *Zonal* or *Regional*. Regional pools replicate volumes across zones but only support default performance, not custom. For more information on service levels and performance, see link:https://docs.cloud.google.com/netapp/volumes/docs/discover/service-levels[GCNV service levels].
+====
+
+//[id="virt-4-21-2-fixed-issues_{context}"]
+//== Fixed issues
+
+//[id="virt-4-21-2-known-issues_{context}"]
+//== Known issues
