@@ -11,4 +11,11 @@ You can create vGPUs for your virtual machines (VMs) using supported GPU cards. 
 
 You can use the NVIDIA GPU Operator to manage vGPUs for your virtual machines (VMs) on the cluster nodes. You must add these devices to the `HyperConverged` custom resource (CR) so that {VirtProductName} can discover and make them available to virtual machines.
 
-A mediated device is a physical device that is divided into one or more virtual devices. vGPUs are a type of mediated device (mdev) where the performance of the physical GPU is divided among the virtual devices. You can assign mediated devices to one or more virtual machines (VMs), but the number of guests must be compatible with your GPU. Some GPUs do not support multiple guests.
+A mediated device is a physical device that is divided into one or more virtual devices. You can base a vGPU on a mediated device (mdev), where the performance of the physical GPU is divided among the virtual devices. You can assign mediated devices to one or more virtual machines (VMs), but the number of guests must be compatible with your GPU. Some GPUs do not support multiple guests.
+
+You can also base a vGPU on single root I/O virtualization (SR-IOV). On nodes that run {op-system-base-full} 10, newer GPU hardware requires SR-IOV based vGPUs.
+
+[role="_additional-resources"]
+.Additional resources
+
+* xref:virt-about-sr-iov-virtual-gpus_{context}[SR-IOV virtual GPUs]

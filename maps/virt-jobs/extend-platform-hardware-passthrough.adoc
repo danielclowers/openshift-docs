@@ -29,6 +29,8 @@ include::modules/virt-configure-virtual-gpus.adoc[leveloffset=+1]
 
 include::modules/virt-about-using-virtual-gpus.adoc[leveloffset=+2]
 
+include::modules/virt-about-sr-iov-virtual-gpus.adoc[leveloffset=+2]
+
 include::modules/shared-set-up-nvidia-gpu-operator.adoc[leveloffset=+2]
 
 include::modules/virt-label-nodes-with-mig-backed-profile.adoc[leveloffset=+2]
