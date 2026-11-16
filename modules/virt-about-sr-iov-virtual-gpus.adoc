@@ -1,0 +1,35 @@
+// Module included in the following maps:
+//
+// * maps/virt-jobs/extend-platform-hardware-passthrough.adoc
+//
+// Module included in the following assemblies:
+//
+// * virt/managing_vms/advanced_vm_management/virt-configuring-virtual-gpus.adoc
+
+:_mod-docs-content-type: CONCEPT
+[id="virt-about-sr-iov-virtual-gpus_{context}"]
+= SR-IOV virtual GPUs
+
+[role="_abstract"]
+You can configure single root I/O virtualization (SR-IOV) based virtual GPUs (vGPUs) and assign them to virtual machines (VMs) in {VirtProductName}.
+
+:FeatureName: SR-IOV virtual GPUs
+include::snippets/technology-preview.adoc[]
+
+Earlier releases of {VirtProductName} supported only vGPUs based on mediated devices (mdev), including on Ampere and later GPU series, which are SR-IOV based in hardware. On nodes that run {op-system-base-full} 10, newer GPU hardware requires SR-IOV based vGPUs. The mdev framework remains supported on {op-system-base} 10 for earlier GPU generations and for other use cases.
+
+An SR-IOV based vGPU consists of virtual functions (VFs) that the GPU exposes. {VirtProductName} does not create VFs or assign vGPU profiles to them. The vendor device plugin exposes the VFs, and {VirtProductName} makes the VFs available to VMs as Peripheral Component Interconnect (PCI) host devices, leaving the allocation of the VFs to the vendor device plugin. If you use heterogeneous vGPU profiles, use the NVIDIA device plugin to expose the VFs.
+
+You configure the GPU, create the VFs, and assign vGPU profiles by following the NVIDIA GPU Operator documentation. On the {VirtProductName} side, you expose and assign SR-IOV vGPU devices in the same way as PCI passthrough devices.
+
+[NOTE]
+====
+Do not bind SR-IOV vGPU devices to the vfio-pci driver. SR-IOV vGPUs are an exception to the requirement to bind PCI devices to the vfio-pci driver.
+====
+
+Live migration of virtual machines that use SR-IOV vGPUs is not supported.
+
+[role="_additional-resources"]
+.Additional resources
+
+* link:https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/latest/index.html[NVIDIA GPU Operator documentation]

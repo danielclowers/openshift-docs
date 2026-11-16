@@ -11,6 +11,8 @@ Use the NVIDIA GPU operator to create virtual GPUs (vGPUs) and assign them to vi
 
 include::modules/virt-about-using-virtual-gpus.adoc[leveloffset=+1]
 
+include::modules/virt-about-sr-iov-virtual-gpus.adoc[leveloffset=+2]
+
 include::modules/virt-adding-kernel-arguments-enable-iommu.adoc[leveloffset=+2]
 
 include::modules/about-using-gpu-operator.adoc[leveloffset=+1]

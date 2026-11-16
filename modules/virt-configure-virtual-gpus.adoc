@@ -9,11 +9,18 @@
 [role="_abstract"]
 You can use the NVIDIA GPU Operator to create virtual GPUs (vGPUs) and assign them to virtual machines (VMs) in {VirtProductName}.
 
-Before you configure virtual GPUs, you must enable the IOMMU driver by following the steps in 'Add kernel arguments to enable the IOMMU driver' in the PCI passthrough section.
+Before you configure virtual GPUs, you must enable the IOMMU driver by following the steps in 'Add kernel arguments to enable the IOMMU driver' in the Peripheral Component Interconnect (PCI) passthrough section.
+
+{VirtProductName} supports vGPUs based on mediated devices (mdev) and vGPUs based on single root I/O virtualization (SR-IOV):
+
+* To configure mdev-based vGPUs, complete the following procedures, which use the NVIDIA GPU Operator to configure the mediated devices.
+* To configure SR-IOV based vGPUs, configure the devices by following the NVIDIA documentation. Then expose and assign the devices by completing the PCI passthrough procedures.
 
 [role="_additional-resources"]
 .Additional resources
 
+* xref:virt-about-sr-iov-virtual-gpus_{context}[SR-IOV virtual GPUs]
+* xref:virt-exposing-pci-device-in-cluster-cli_{context}[Expose PCI host devices in the cluster]
 * link:https://docs.nvidia.com/datacenter/cloud-native/openshift/latest/mig-ocp.html#[MIG Support in {product-title}]
 * link:https://access.redhat.com/solutions/5174941[Obtaining Support from NVIDIA]
 * link:https://docs.nvidia.com/datacenter/tesla/mig-user-guide/supported-mig-profiles.html[MIG User Guide]
